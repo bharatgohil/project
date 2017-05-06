@@ -1,0 +1,11 @@
+#  This is Webcam Process
+
+[Unit]
+Description=Webcam Process
+DefaultDependencies=no
+
+[Service]
+Type=oneshot
+ExecStartPre=/bin/sh -c 'ifconfig eth0 10.90.30.83; \
+			 chmod 777 /sys/class/gpio/export'
+ExecStart=/root/webcam_process
